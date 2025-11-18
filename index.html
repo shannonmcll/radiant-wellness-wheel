@@ -8,14 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Nunito Sans', sans-serif; overflow-x: hidden; }
-        #root { min-height: 100vh; }
+        body { margin: 0; padding: 0; font-family: 'Nunito Sans', sans-serif; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
-        .section-container { min-height: 600px; max-height: 800px; overflow-y: auto; }
         input[type="range"] { -webkit-appearance: none; appearance: none; }
         input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #4299e1; cursor: pointer; }
         input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; border-radius: 50%; background: #4299e1; cursor: pointer; border: none; }
@@ -38,7 +36,6 @@
                 'Play & Creativity': 5, 'Finances': 5, 'Spirituality': 5
             });
             const canvasRef = useRef(null);
-            const rootRef = useRef(null);
             
             const categories = [
                 { name: 'Social & Relationships', color: '#ebcce1' },
@@ -65,9 +62,7 @@
             };
             
             useEffect(() => {
-                if (rootRef.current) {
-                    rootRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                window.scrollTo(0, 0);
             }, [step]);
             
             const drawWheel = (ctx, width, height) => {
@@ -159,29 +154,29 @@
             const allTens = Object.values(scores).every(s => s === 10);
             const lowestAreas = getLowestScores();
             
-            return h('div', { ref: rootRef },
-                step === 'intro' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-6 md:p-8 section-container flex items-center', style: { fontFamily: 'Nunito Sans, sans-serif' }},
-                    h('div', { className: 'max-w-2xl w-full mx-auto bg-white rounded-lg shadow-xl p-6 md:p-8' },
-                        h('h1', { className: 'text-3xl md:text-4xl font-bold text-center mb-3', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Feeling Lost in Your Healing Journey?'),
-                        h('p', { className: 'text-base md:text-lg text-center mb-4', style: { color: '#191919' }}, 'Start with a gentle 2-minute self-check to see where your energy is being pulled — and where small shifts could restore balance.'),
-                        h('div', { className: 'border-l-4 p-3 mb-6', style: { backgroundColor: '#f7f7f7', borderColor: '#4e8cc3' }},
+            return h('div', { style: { minHeight: '100vh' }},
+                step === 'intro' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-6 md:p-10 min-h-screen flex items-center', style: { fontFamily: 'Nunito Sans, sans-serif' }},
+                    h('div', { className: 'max-w-2xl w-full mx-auto bg-white rounded-lg shadow-xl p-8 md:p-10' },
+                        h('h1', { className: 'text-3xl md:text-4xl font-bold text-center mb-4', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Feeling Lost in Your Healing Journey?'),
+                        h('p', { className: 'text-base md:text-lg text-center mb-6', style: { color: '#191919' }}, 'Start with a gentle 2-minute self-check to see where your energy is being pulled — and where small shifts could restore balance.'),
+                        h('div', { className: 'border-l-4 p-4 mb-8', style: { backgroundColor: '#f7f7f7', borderColor: '#4e8cc3' }},
                             h('p', { className: 'text-sm italic', style: { color: '#191919' }}, 'There is no perfect circle – just your lived experience in this moment.')
                         ),
-                        h('button', { onClick: () => setStep('assessment'), className: 'w-full text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all hover:opacity-90', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Start Your Radiant Wellness Wheel'),
-                        h('p', { className: 'text-xs text-center mt-4', style: { color: '#7a8699' }}, '© 2025, Redefine Your Radiance')
+                        h('button', { onClick: () => setStep('assessment'), className: 'w-full text-white font-bold py-4 px-8 rounded-lg text-lg transition-all hover:opacity-90', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Start Your Radiant Wellness Wheel'),
+                        h('p', { className: 'text-xs text-center mt-6', style: { color: '#7a8699' }}, '© 2025, Redefine Your Radiance')
                     )
                 ),
                 
-                step === 'assessment' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-4 md:p-6 section-container', style: { fontFamily: 'Nunito Sans, sans-serif' }},
+                step === 'assessment' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-6 md:p-8', style: { fontFamily: 'Nunito Sans, sans-serif' }},
                     h('div', { className: 'max-w-4xl mx-auto' },
-                        h('h2', { className: 'text-2xl md:text-3xl font-bold text-center mb-3', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Slide to reflect how aligned or out of sync each category feels right now.'),
-                        h('p', { className: 'text-center mb-6 text-sm', style: { color: '#7a8699' }}, 'There\'s no right or wrong here — simply slide to reflect what\'s true for you today.'),
-                        h('div', { className: 'bg-white rounded-lg shadow-xl p-4 md:p-6 mb-4' },
+                        h('h2', { className: 'text-2xl md:text-3xl font-bold text-center mb-4', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Slide to reflect how aligned or out of sync each category feels right now.'),
+                        h('p', { className: 'text-center mb-8 text-sm', style: { color: '#7a8699' }}, 'There\'s no right or wrong here — simply slide to reflect what\'s true for you today.'),
+                        h('div', { className: 'bg-white rounded-lg shadow-xl p-6 md:p-8 mb-6' },
                             categories.map(cat => 
-                                h('div', { key: cat.name, className: 'mb-4' },
+                                h('div', { key: cat.name, className: 'mb-6' },
                                     h('div', { className: 'flex justify-between items-center mb-2' },
-                                        h('label', { className: 'font-semibold text-sm', style: { color: '#191919' }}, cat.name),
-                                        h('span', { className: 'text-xl font-bold', style: { color: cat.color, fontFamily: 'Raleway, sans-serif' }}, scores[cat.name])
+                                        h('label', { className: 'font-semibold text-sm md:text-base', style: { color: '#191919' }}, cat.name),
+                                        h('span', { className: 'text-xl md:text-2xl font-bold', style: { color: cat.color, fontFamily: 'Raleway, sans-serif' }}, scores[cat.name])
                                     ),
                                     h('input', { 
                                         type: 'range', min: 1, max: 10, value: scores[cat.name],
@@ -196,54 +191,54 @@
                                 )
                             )
                         ),
-                        h('button', { onClick: () => setStep('results'), className: 'w-full text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg text-base md:text-lg transition-all hover:opacity-90', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'See My Results & Reflections')
+                        h('button', { onClick: () => setStep('results'), className: 'w-full text-white font-bold py-4 px-8 rounded-lg text-lg transition-all hover:opacity-90', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'See My Results & Reflections')
                     )
                 ),
                 
-                step === 'results' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-4 md:p-6 section-container', style: { fontFamily: 'Nunito Sans, sans-serif' }},
+                step === 'results' && h('div', { className: 'bg-gradient-to-b from-pink-50 to-blue-50 p-6 md:p-8', style: { fontFamily: 'Nunito Sans, sans-serif' }},
                     h('div', { className: 'max-w-4xl mx-auto' },
-                        h('h2', { className: 'text-2xl md:text-3xl font-bold text-center mb-2', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Your Radiant Wellness Wheel'),
-                        h('p', { className: 'text-center mb-4 text-sm', style: { color: '#7a8699' }}, 'A visual snapshot of your present health'),
-                        h('div', { className: 'bg-white rounded-lg shadow-xl p-3 md:p-4 mb-4 opacity-0 animate-fade-in' },
+                        h('h2', { className: 'text-2xl md:text-3xl font-bold text-center mb-3', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Your Radiant Wellness Wheel'),
+                        h('p', { className: 'text-center mb-6 text-sm', style: { color: '#7a8699' }}, 'A visual snapshot of your present health'),
+                        h('div', { className: 'bg-white rounded-lg shadow-xl p-4 md:p-6 mb-6 opacity-0 animate-fade-in' },
                             h('canvas', { ref: canvasRef, width: 500, height: 500, className: 'w-full max-w-md mx-auto block' }),
-                            h('div', { className: 'text-center mt-4' },
-                                h('button', { onClick: downloadWheel, className: 'text-white font-bold py-3 px-8 rounded-lg transition-all hover:opacity-90 text-base', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Download Your Wheel')
+                            h('div', { className: 'text-center mt-6' },
+                                h('button', { onClick: downloadWheel, className: 'text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-lg transition-all hover:opacity-90 text-base md:text-lg', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Download Your Wheel')
                             )
                         ),
-                        h('div', { className: 'bg-white rounded-lg shadow-xl p-4 md:p-6 mb-4' },
+                        h('div', { className: 'bg-white rounded-lg shadow-xl p-6 md:p-8 mb-6' },
                             allTens ? 
                                 h('div', null,
-                                    h('h3', { className: 'text-xl font-bold mb-3 text-center', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Look at you — glowing in every direction!'),
-                                    h('p', { className: 'mb-3 text-center text-sm', style: { color: '#7a8699' }}, 'If your wheel is a perfect 10, that is amazing... but even thriving souls have edges to explore.'),
-                                    h('p', { className: 'text-center text-sm', style: { color: '#7a8699' }}, 'Maybe your next step is not fixing — it is deepening.')
+                                    h('h3', { className: 'text-xl font-bold mb-4 text-center', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Look at you — glowing in every direction!'),
+                                    h('p', { className: 'mb-4 text-center', style: { color: '#7a8699' }}, 'If your wheel is a perfect 10, that is amazing... but even thriving souls have edges to explore.'),
+                                    h('p', { className: 'text-center', style: { color: '#7a8699' }}, 'Maybe your next step is not fixing — it is deepening.')
                                 ) :
                                 h('div', null,
-                                    h('h3', { className: 'text-xl font-bold mb-3', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Areas for Reflection'),
-                                    h('p', { className: 'mb-4 text-sm', style: { color: '#7a8699' }}, 'Use these prompts to explore what might be asking for more care, clarity, or support right now.'),
+                                    h('h3', { className: 'text-xl font-bold mb-4', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Areas for Reflection'),
+                                    h('p', { className: 'mb-6', style: { color: '#7a8699', fontSize: '1.05rem' }}, 'Use these prompts to explore what might be asking for more care, clarity, or support right now.'),
                                     lowestAreas.map(area =>
-                                        h('div', { key: area, className: 'mb-4 p-3 rounded-lg', style: { backgroundColor: categories.find(c => c.name === area).color + '20' }},
-                                            h('h4', { className: 'font-bold text-base mb-2', style: { color: '#191919', fontFamily: 'Raleway, sans-serif' }}, area),
+                                        h('div', { key: area, className: 'mb-6 p-4 rounded-lg', style: { backgroundColor: categories.find(c => c.name === area).color + '20' }},
+                                            h('h4', { className: 'font-bold text-lg mb-2', style: { color: '#191919', fontFamily: 'Raleway, sans-serif' }}, area),
                                             h('p', { className: 'italic text-sm', style: { color: '#7a8699' }}, reflectiveQuestions[area])
                                         )
                                     )
                                 )
                         ),
-                        h('div', { className: 'border-l-4 p-3 mb-4', style: { backgroundColor: '#f7f7f7', borderColor: '#4e8cc3' }},
+                        h('div', { className: 'border-l-4 p-4 mb-6', style: { backgroundColor: '#f7f7f7', borderColor: '#4e8cc3' }},
                             h('p', { className: 'text-sm', style: { color: '#7a8699' }},
                                 h('span', { style: { fontWeight: '600' }}, 'Remember:'), ' Your wheel is a living snapshot, not a scorecard. Use it to notice shifts, honor your progress, and gently refocus where needed.'
                             )
                         ),
-                        h('div', { className: 'bg-white rounded-lg shadow-xl p-4 md:p-6 mb-4' },
-                            h('h3', { className: 'text-xl font-bold text-center mb-3', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Clarity Creates Choice.'),
-                            h('p', { className: 'text-center mb-3 text-sm', style: { color: '#7a8699' }}, 'Now that you have explored your wheel, you may notice areas asking for steadiness, nourishment, or a clearer sense of direction.'),
-                            h('p', { className: 'text-center mb-4 text-sm', style: { color: '#7a8699' }}, 'I offer a small number of complimentary Radiance Reset Sessions each month — reserved for women who have completed the wellness wheel and are ready to explore their next steps.'),
+                        h('div', { className: 'bg-white rounded-lg shadow-xl p-6 md:p-8 mb-6' },
+                            h('h3', { className: 'text-xl font-bold text-center mb-4', style: { fontFamily: 'Raleway, sans-serif', color: '#494949' }}, 'Clarity Creates Choice.'),
+                            h('p', { className: 'text-center mb-4', style: { color: '#7a8699' }}, 'Now that you have explored your wheel, you may notice areas asking for steadiness, nourishment, or a clearer sense of direction.'),
+                            h('p', { className: 'text-center mb-6 text-sm', style: { color: '#7a8699', fontSize: '0.95rem' }}, 'I offer a small number of complimentary Radiance Reset Sessions each month — reserved for women who have completed the wellness wheel and are ready to explore their next steps.'),
                             h('div', { className: 'text-center' },
-                                h('a', { href: 'https://calendly.com/shannon-redefineyourradiance/discovery-session', target: '_blank', rel: 'noopener noreferrer', className: 'inline-block text-white font-bold py-3 px-8 rounded-lg transition-all hover:opacity-90 text-base', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Book Your Radiance Reset Session'),
-                                h('p', { className: 'mt-2 text-xs', style: { color: '#7a8699' }}, 'No pressure — just a grounded space to talk.')
+                                h('a', { href: 'https://calendly.com/shannon-redefineyourradiance/discovery-session', target: '_blank', rel: 'noopener noreferrer', className: 'inline-block text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-lg transition-all hover:opacity-90 text-base md:text-lg', style: { backgroundColor: '#e3ccca', fontFamily: 'Raleway, sans-serif' }}, 'Book Your Radiance Reset Session'),
+                                h('p', { className: 'mt-3 text-xs', style: { color: '#7a8699' }}, 'No pressure — just a grounded space to talk.')
                             )
                         ),
-                        h('button', { onClick: () => { setStep('intro'); setScores({ 'Social & Relationships': 5, 'Purpose': 5, 'Movement & Exercise': 5, 'Joy & Contentment': 5, 'Meals & Nutrition': 5, 'Environment': 5, 'Play & Creativity': 5, 'Finances': 5, 'Spirituality': 5 }); }, className: 'w-full mt-4 underline hover:opacity-80 text-sm', style: { color: '#7a8699' }}, 'Start a New Assessment'),
-                        h('p', { className: 'text-xs text-center mt-4', style: { color: '#7a8699' }}, '© 2025, Redefine Your Radiance, Shannon McConnell')
+                        h('button', { onClick: () => { setStep('intro'); setScores({ 'Social & Relationships': 5, 'Purpose': 5, 'Movement & Exercise': 5, 'Joy & Contentment': 5, 'Meals & Nutrition': 5, 'Environment': 5, 'Play & Creativity': 5, 'Finances': 5, 'Spirituality': 5 }); }, className: 'w-full mt-6 underline hover:opacity-80', style: { color: '#7a8699' }}, 'Start a New Assessment'),
+                        h('p', { className: 'text-xs text-center mt-6', style: { color: '#7a8699' }}, '© 2025, Redefine Your Radiance, Shannon McConnell')
                     )
                 )
             );
