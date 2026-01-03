@@ -365,12 +365,19 @@
         categories.forEach(cat => scores[cat.name] = 5);
         
         function goToSection(sectionName) {
+            // Hide all sections
             document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            
+            // Show target section
             const section = document.getElementById('section-' + sectionName);
             section.classList.remove('hidden');
             
-            // Scroll to top of the iframe content
-            window.scrollTo(0, 0);
+            // Scroll iframe to top immediately
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            
+            // Also try scrolling the body
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
             
             if (sectionName === 'assessment') {
                 createSliders();
