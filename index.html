@@ -368,7 +368,6 @@
             document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
             const section = document.getElementById('section-' + sectionName);
             section.classList.remove('hidden');
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
             
             if (sectionName === 'assessment') {
                 createSliders();
