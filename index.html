@@ -22,61 +22,56 @@
         }
         
         .section {
-            min-height: 550px;
+            min-height: 600px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: #f7f7f7;
         }
         
         .content-wrapper {
-            max-width: 800px;
+            max-width: 580px;
             width: 100%;
             margin: 0 auto;
             background: white;
             border-radius: 12px;
-            padding: 40px 30px;
+            padding: 35px 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            font-family: 'Raleway', sans-serif;
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
-            color: #494949;
-            text-align: center;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            min-height: 550px;
+            display: flex;
+            flex-direction: column;
         }
         
         h2 {
             font-family: 'Raleway', sans-serif;
-            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(1.4rem, 4vw, 1.85rem);
             color: #494949;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
         
         h3 {
             font-family: 'Raleway', sans-serif;
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-size: clamp(1.15rem, 3vw, 1.35rem);
             color: #494949;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         p {
             color: #7a8699;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
             line-height: 1.6;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         
         .intro-quote {
             border-left: 4px solid #4e8cc3;
             background: #f7f7f7;
             padding: 15px 20px;
-            margin: 25px 0;
+            margin: 20px 0;
         }
         
         .intro-quote p {
@@ -89,23 +84,23 @@
         
         .wheel-image {
             width: 100%;
-            max-width: 400px;
+            max-width: 350px;
             height: auto;
             display: block;
-            margin: 30px auto;
+            margin: 25px auto;
         }
         
         .btn {
             display: block;
             width: 100%;
             max-width: 500px;
-            margin: 30px auto 0;
-            padding: 16px 32px;
+            margin: 25px auto 0;
+            padding: 14px 28px;
             background: #eadbda;
             color: #000;
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
             text-align: center;
             text-decoration: none;
             border: none;
@@ -120,34 +115,34 @@
         }
         
         .slider-group {
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
         
         .slider-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
         
         .slider-label {
             font-weight: 600;
             color: #191919;
-            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         
         .slider-value {
             font-family: 'Raleway', sans-serif;
             font-weight: 700;
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
         
         input[type="range"] {
             -webkit-appearance: none;
             appearance: none;
             width: 100%;
-            height: 12px;
-            border-radius: 6px;
+            height: 10px;
+            border-radius: 5px;
             outline: none;
             cursor: pointer;
         }
@@ -181,30 +176,30 @@
         }
         
         .slider-labels span {
-            font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+            font-size: clamp(0.65rem, 1.6vw, 0.75rem);
             color: #7a8699;
         }
         
         canvas {
             width: 100%;
-            max-width: 450px;
+            max-width: 400px;
             height: auto;
             display: block;
-            margin: 20px auto;
+            margin: 15px auto;
         }
         
         .reflection-card {
             background: #f9f9f9;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
         }
         
         .reflection-card h4 {
             font-family: 'Raleway', sans-serif;
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
             color: #191919;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .reflection-card p {
@@ -215,29 +210,40 @@
             margin: 0;
         }
         
+        .show-more-btn {
+            background: transparent;
+            color: #4e8cc3;
+            text-decoration: underline;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            padding: 8px;
+            margin: 8px auto;
+        }
+        
         .cta-box {
             background: white;
             border: 2px solid #eadbda;
             border-radius: 12px;
-            padding: 25px 25px;
+            padding: 20px;
             text-align: center;
-            margin-top: 25px;
+            margin-top: 20px;
         }
         
         .cta-box h3 {
             text-align: center;
+            margin-bottom: 10px;
         }
         
         .cta-box p {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            font-size: clamp(0.9rem, 2vw, 1rem);
         }
         
         .copyright {
             text-align: center;
-            font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
             color: #7a8699;
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 15px;
         }
         
         .hidden {
@@ -246,16 +252,17 @@
         
         @media (max-width: 600px) {
             .section {
-                min-height: 500px;
-                padding: 30px 15px;
+                min-height: 550px;
+                padding: 25px 15px;
             }
             
             .content-wrapper {
-                padding: 30px 20px;
+                padding: 28px 20px;
+                min-height: 520px;
             }
             
             .slider-group {
-                margin-bottom: 18px;
+                margin-bottom: 16px;
             }
         }
         
@@ -274,8 +281,7 @@
         <!-- Section 1: Intro -->
         <div id="section-intro" class="section">
             <div class="content-wrapper fade-in">
-                <h1>Feeling Lost in Your Healing Journey?</h1>
-                <p>Start with a gentle 2-minute self-check to see where your energy is being pulled — and where small shifts could restore balance.</p>
+                <p style="margin-bottom: 18px;">If you're feeling lost in your healing journey, start with a gentle 2-minute self-check to see where your energy is being pulled — and where small shifts could restore balance.</p>
                 
                 <div class="intro-quote">
                     <p>There is no perfect circle – just your lived experience in this moment.</p>
@@ -292,8 +298,8 @@
         <!-- Section 2: Assessment -->
         <div id="section-assessment" class="section hidden">
             <div class="content-wrapper fade-in">
-                <h2 style="margin-bottom: 10px;">Slide to reflect how aligned or out of sync each category feels right now.</h2>
-                <p style="margin-bottom: 25px;">There's no right or wrong here — simply slide to reflect what's true for you today.</p>
+                <h2 style="margin-bottom: 8px; font-size: clamp(1.3rem, 3.8vw, 1.7rem);">Slide to reflect how aligned or out of sync each category feels right now.</h2>
+                <p style="margin-bottom: 22px;">There's no right or wrong here — simply slide to reflect what's true for you today.</p>
                 
                 <div id="sliders-container"></div>
                 
@@ -304,32 +310,23 @@
         <!-- Section 3: Results -->
         <div id="section-results" class="section hidden">
             <div class="content-wrapper fade-in">
-                <h2 style="margin-bottom: 8px;">Your Radiant Wellness Wheel</h2>
-                <p style="margin-bottom: 20px;">A visual snapshot of your present health</p>
+                <h2 style="margin-bottom: 6px;">Your Radiant Wellness Wheel</h2>
+                <p style="margin-bottom: 15px;">A visual snapshot of your present health</p>
                 
                 <canvas id="wheel-canvas" width="500" height="500"></canvas>
                 
-                <button class="btn" onclick="downloadWheel()">Download Your Wheel</button>
-                
-                <div id="reflections-container" style="margin-top: 40px;">
+                <div id="reflections-container" style="margin-top: 20px;">
                     <h3>Areas for Reflection</h3>
-                    <p style="text-align: left; margin-bottom: 20px;">Use these prompts to explore what might be asking for more care, clarity, or support right now.</p>
+                    <p style="text-align: left; margin-bottom: 15px; font-size: 0.95rem;">Use these prompts to explore what might be asking for more care, clarity, or support right now.</p>
                     <div id="reflection-cards"></div>
+                    <button class="btn show-more-btn hidden" id="show-more-btn" onclick="toggleReflections()">Show More</button>
                 </div>
                 
-                <div class="intro-quote" style="margin-top: 30px;">
+                <div class="intro-quote" style="margin-top: 20px;">
                     <p><strong>Remember:</strong> Your wheel is a living snapshot, not a scorecard. Use it to notice shifts, honor your progress, and gently refocus where needed.</p>
                 </div>
                 
-                <div class="cta-box">
-                    <h3>Clarity Creates Choice.</h3>
-                    <p>Now that you have explored your wheel, you may notice areas asking for steadiness, nourishment, or a clearer sense of direction.</p>
-                    <p style="font-size: 0.95rem;">I offer a small number of complimentary Radiance Reset Sessions each month — reserved for women who have completed the wellness wheel and are ready to explore their next steps.</p>
-                    <a href="https://calendly.com/shannon-redefineyourradiance/discovery-session" target="_blank" rel="noopener noreferrer" class="btn">Book Your Radiance Reset Session</a>
-                    <p style="font-size: 0.85rem; margin-top: 15px;">No pressure — just a grounded space to talk.</p>
-                </div>
-                
-                <button class="btn" onclick="resetWheel()" style="margin-top: 30px; background: transparent; color: #7a8699; text-decoration: underline;">Start a New Assessment</button>
+                <button class="btn" onclick="resetWheel()" style="margin-top: 25px; background: transparent; color: #7a8699; text-decoration: underline;">Start a New Assessment</button>
                 
                 <p class="copyright">© 2025, Redefine Your Radiance, Shannon McConnell</p>
             </div>
@@ -362,6 +359,9 @@
         };
         
         let scores = {};
+        let allReflectionCards = [];
+        let showingAll = false;
+        
         categories.forEach(cat => scores[cat.name] = 5);
         
         function goToSection(sectionName) {
@@ -490,84 +490,11 @@
             });
         }
         
-        function downloadWheel() {
-            const canvas = document.createElement('canvas');
-            canvas.width = canvas.height = 1500;
-            const ctx = canvas.getContext('2d');
-            const width = canvas.width;
-            const height = canvas.height;
-            const centerX = width / 2;
-            const centerY = height / 2;
-            const radius = Math.min(width, height) * 0.35;
-            const angleStep = (Math.PI * 2) / categories.length;
-            
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, width, height);
-            
-            categories.forEach((cat, i) => {
-                const startAngle = i * angleStep - Math.PI / 2;
-                const endAngle = startAngle + angleStep;
-                
-                ctx.fillStyle = cat.color;
-                ctx.globalAlpha = 0.6;
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-                ctx.closePath();
-                ctx.fill();
-                ctx.globalAlpha = 1;
-                
-                ctx.strokeStyle = '#999';
-                ctx.lineWidth = 3;
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(centerX + Math.cos(startAngle) * radius, centerY + Math.sin(startAngle) * radius);
-                ctx.stroke();
-            });
-            
-            ctx.strokeStyle = '#666';
-            ctx.fillStyle = 'rgba(100,100,100,0.2)';
-            ctx.lineWidth = 6;
-            ctx.beginPath();
-            categories.forEach((cat, i) => {
-                const angle = i * angleStep - Math.PI / 2;
-                const scoreRadius = (radius * scores[cat.name]) / 10;
-                const x = centerX + Math.cos(angle) * scoreRadius;
-                const y = centerY + Math.sin(angle) * scoreRadius;
-                i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-            });
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
-            
-            ctx.fillStyle = '#333';
-            ctx.font = 'bold 42px Arial';
-            ctx.textAlign = 'center';
-            categories.forEach((cat, i) => {
-                const angle = i * angleStep + angleStep / 2 - Math.PI / 2;
-                const x = centerX + Math.cos(angle) * (radius + 120);
-                const y = centerY + Math.sin(angle) * (radius + 120);
-                const words = cat.name.split(' ');
-                if (words.length > 2) {
-                    ctx.fillText(words[0] + ' ' + words[1], x, y - 15);
-                    ctx.fillText(words[2], x, y + 30);
-                } else if (words.length === 2) {
-                    ctx.fillText(words[0], x, y - 15);
-                    ctx.fillText(words[1], x, y + 30);
-                } else {
-                    ctx.fillText(cat.name, x, y);
-                }
-            });
-            
-            const link = document.createElement('a');
-            link.download = 'my-radiant-wellness-wheel.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        }
-        
         function showReflections() {
             const container = document.getElementById('reflection-cards');
+            const showMoreBtn = document.getElementById('show-more-btn');
             container.innerHTML = '';
+            showingAll = false;
             
             // Get lowest 3 scores (randomize if tied)
             const sorted = Object.entries(scores).sort((a, b) => a[1] - b[1]);
@@ -576,7 +503,6 @@
             
             let areasToShow;
             if (lowestAreas.length > 3) {
-                // Randomize if more than 3 tied
                 areasToShow = lowestAreas.sort(() => Math.random() - 0.5).slice(0, 3);
             } else {
                 areasToShow = sorted.slice(0, 3);
@@ -592,18 +518,61 @@
                         <p>If your wheel is a perfect 10, that is amazing... but even thriving souls have edges to explore. Maybe your next step is not fixing — it is deepening.</p>
                     </div>
                 `;
+                showMoreBtn.classList.add('hidden');
             } else {
-                areasToShow.forEach(([name]) => {
+                // Store all cards
+                allReflectionCards = areasToShow.map(([name]) => {
                     const category = categories.find(c => c.name === name);
-                    const card = document.createElement('div');
-                    card.className = 'reflection-card';
-                    card.style.background = category.color + '30';
-                    card.innerHTML = `
-                        <h4>${name}</h4>
-                        <p>${reflectiveQuestions[name]}</p>
-                    `;
-                    container.appendChild(card);
+                    return {
+                        name: name,
+                        color: category.color,
+                        question: reflectiveQuestions[name]
+                    };
                 });
+                
+                // Show only first card initially
+                displayReflectionCard(allReflectionCards[0]);
+                
+                // Show "Show More" button if there are more cards
+                if (allReflectionCards.length > 1) {
+                    showMoreBtn.classList.remove('hidden');
+                    showMoreBtn.textContent = 'Show More';
+                } else {
+                    showMoreBtn.classList.add('hidden');
+                }
+            }
+        }
+        
+        function displayReflectionCard(cardData) {
+            const container = document.getElementById('reflection-cards');
+            const card = document.createElement('div');
+            card.className = 'reflection-card';
+            card.style.background = cardData.color + '30';
+            card.innerHTML = `
+                <h4>${cardData.name}</h4>
+                <p>${cardData.question}</p>
+            `;
+            container.appendChild(card);
+        }
+        
+        function toggleReflections() {
+            const container = document.getElementById('reflection-cards');
+            const showMoreBtn = document.getElementById('show-more-btn');
+            
+            if (!showingAll) {
+                // Show all cards
+                container.innerHTML = '';
+                allReflectionCards.forEach(cardData => {
+                    displayReflectionCard(cardData);
+                });
+                showMoreBtn.textContent = 'Show Less';
+                showingAll = true;
+            } else {
+                // Show only first card
+                container.innerHTML = '';
+                displayReflectionCard(allReflectionCards[0]);
+                showMoreBtn.textContent = 'Show More';
+                showingAll = false;
             }
         }
         
