@@ -369,6 +369,9 @@
             const section = document.getElementById('section-' + sectionName);
             section.classList.remove('hidden');
             
+            // Scroll to top of the iframe content
+            window.scrollTo(0, 0);
+            
             if (sectionName === 'assessment') {
                 createSliders();
             } else if (sectionName === 'results') {
